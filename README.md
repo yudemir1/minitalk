@@ -19,5 +19,3 @@ Features:
     Supports Unicode characters.
 
 Tech: C, UNIX Signals (signal/sigaction, kill), Make
-
-burdaki tıldızları vs kaldırsana temiz bir text ver
