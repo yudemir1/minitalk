@@ -1,21 +1,31 @@
-Minitalk (42 School Project)
+# Minitalk 📶 (42 School Project)
 
-A simple client-server program demonstrating communication using only UNIX signals (SIGUSR1 and SIGUSR2).
+A simple client-server program demonstrating inter-process communication (IPC) using only **UNIX signals** (`SIGUSR1` and `SIGUSR2`).
 
-Goal: The client process sends a string message to the server process, which then displays it. Communication is achieved by encoding the string bit-by-bit into signals.
+---
 
-Features:
+## 🎯 Goal
 
-    Server displays its PID on startup.
+The client process sends a string message to the server process, which then displays it. Communication is achieved by encoding the string **bit-by-bit** into signals.
 
-    Client takes server PID and the message string as arguments.
+---
 
-    Uses SIGUSR1 and SIGUSR2 exclusively for data transfer.
+## ✨ Features
 
-    Server can handle messages from multiple clients consecutively.
+*   Server displays its **PID** (Process ID) on startup.
+*   Client takes the server `PID` and the message `string` as arguments.
+*   Uses `SIGUSR1` and `SIGUSR2` **exclusively** for data transfer.
+*   Server can handle messages from multiple clients consecutively without restarting.
+*   **Acknowledgement:** Server acknowledges message receipt back to the client. *(Bonus)*
+*   **Unicode Support:** Correctly transmits and displays Unicode characters. *(Bonus)*
 
-    Server acknowledges message receipt to the client.
+---
 
-    Supports Unicode characters.
+## 💻 Tech Stack
 
-Tech: C, UNIX Signals (signal/sigaction, kill), Make
+*   **Language:** C
+*   **Core Concepts:** UNIX Signals, Inter-Process Communication (IPC), Bitwise Operations
+*   **System Calls/Functions:** `signal()` / `sigaction()`, `kill()`, `getpid()`, `pause()`, `usleep()`
+*   **Build System:** Make
+
+---
